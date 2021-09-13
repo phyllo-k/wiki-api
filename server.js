@@ -19,7 +19,6 @@ mongoose.connection.once("open", function () {
     app.emit("ready");
 });
 
-
 //Article API
 const articleSchema = mongoose.Schema({
     title: { type: String, required: true },
@@ -49,7 +48,7 @@ app.route("/articles")
             (err) ? res.send(err) : res.send("Success: Deleted all articles.");
         })
     })
-    ;
+;
 
 app.route("/articles/:title")
     .get(function (req, res) {
